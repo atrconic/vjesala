@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vjesala</title>
+</head>
+<body>
+  <h4>Nova igra!</h4>
+  <p>pokusaj pogoditi</p>
+  <p>{{ displej }}</p>
+  <p>koristena slova: {{ x }}</p>
+  <p>preostalo zivota: {{ z }} </p>
+  {% if z > 0 and pobjeda == False %}
+  <form method="post" action="/nova-igra">
+      <input type="text" name="slovo" placeholder="upiši slovo">
+      <input type="submit">
+  </form>
+  <a href="/">odustani</a>
+  {% else %}
+    <h4>Kraj igre!</h4>
+    <h4>Trazila se rijec {{ rijec }}.</h4>
+    <a href="/nova-igra">nova igra</a>
+  {% endif %}
+
+</body>
+</html>
